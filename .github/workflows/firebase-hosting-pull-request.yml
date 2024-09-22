@@ -17,12 +17,9 @@ jobs:
       - name: Install sed
         run: sudo apt-get update && sudo apt-get install -y sed
 
-      - name: List files in directory
-        run: ls public
-
       - name: Inject AccuWeather API key
         run: |
-          sed -i "s/YOUR_ACCUWEATHER_API_KEY/${{ secrets.ACCUWEATHER_API_KEY }}/g" scripts/forecast.js
+          sed -i "s/YOUR_ACCUWEATHER_API_KEY/${{ secrets.ACCUWEATHER_API_KEY }}/g" public/scripts/forecast.js
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
