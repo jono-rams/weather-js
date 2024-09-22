@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y sed
 
       - name: List files in directory
-        run: ls
+        run: ls public
 
       - name: Inject AccuWeather API key
         run: |
