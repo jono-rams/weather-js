@@ -17,6 +17,9 @@ jobs:
       - name: Install sed
         run: sudo apt-get update && sudo apt-get install -y sed
 
+      - name: List files in scripts directory
+        run: ls scripts
+
       - name: Inject AccuWeather API key
         run: |
           sed -i "s/YOUR_ACCUWEATHER_API_KEY/${{ secrets.ACCUWEATHER_API_KEY }}/g" scripts/forecast.js
