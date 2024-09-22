@@ -1,0 +1,1 @@
+const key = 'YOUR_ACCUWEATHER_API_KEY';

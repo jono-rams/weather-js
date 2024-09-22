@@ -14,6 +14,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
+      - name: Install sed
+        run: sudo apt-get update && sudo apt-get install -y sed
+
+      - name: Inject AccuWeather API key
+        run: |
+          sed -i "s/YOUR_ACCUWEATHER_API_KEY/${{ secrets.ACCUWEATHER_API_KEY }}/g" scripts/forecast.js
+
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
