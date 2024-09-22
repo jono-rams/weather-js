@@ -19,7 +19,15 @@ const updateUI = (data) => {
     </div>
   `;
 
-  
+  // update the night/day & icon images
+  const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
+  icon.setAttribute('src', iconSrc);
+  icon.setAttribute('alt', weather.WeatherText);
+
+  let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
+  let timeAlt = weather.IsDayTime ? 'day' : 'night';
+  time.setAttribute('src', timeSrc);
+  time.setAttribute('alt', timeAlt);
 
   // remove the d-none class if present
   if(card.classList.contains('d-none')) {
