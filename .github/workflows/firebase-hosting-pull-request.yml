@@ -27,4 +27,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEATHER_JS_5AE2D }}'
           channelId: live
-          projectId: portfolio-21255/weather-jr
+          target: weather-jr
+          projectId: portfolio-21255
